@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         for(CheckBox c:chk){
             c.setOnCheckedChangeListener(this);
         }
-        radiogrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
+        /*radiogrp.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             public void onCheckedChanged(RadioGroup group, int checkedId){
                 switch(checkedId){
                     case R.id.radioButton:
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
                         break;
                 }
             }
-        });
+        });*/
     }
     public void click1(View v){
         if(chk[0].isChecked()){
@@ -49,6 +49,18 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
         }
         else{
             Log.d("CHK","檢查後chk1沒有打勾");
+        }
+
+        switch (radiogrp.getCheckedRadioButtonId()){
+            case R.id.radioButton:
+                Log.d("RDO","選項一");
+                break;
+            case R.id.radioButton2:
+                Log.d("RDO","選項2");
+                break;
+            case R.id.radioButton3:
+                Log.d("RDO","選項3");
+                break;
         }
     }
 
@@ -68,17 +80,7 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             }
         }
 
-        /*switch (radiogrp.getCheckedRadioButtonId()){
-            case R.id.radioButton:
-                Log.d("RDO","選項一");
-                break;
-            case R.id.radioButton2:
-                Log.d("RDO","選項2");
-                break;
-            case R.id.radioButton3:
-                Log.d("RDO","選項3");
-                break;
-        }*/
+
 
     }
 }
